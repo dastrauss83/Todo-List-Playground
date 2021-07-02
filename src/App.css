@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  background-color: rgba(27, 20, 100, 0.75);
+}
+
+.Header {
+  margin-top: 30px;
+  font-size: 400%;
+  font-weight: 900;
+  margin-bottom: 10px;
+  color: whitesmoke;
+}
+
+.Todo {
+  border: solid;
+  width: calc(70vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 150%;
+  margin-bottom: 10px;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  color: rgba(27, 20, 100, 0.75);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: 0.3s;
+}
+
+.Todo:hover {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  transform: scale(1.02);
+  cursor: pointer;
+}
+.NavBar {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  font-size: 150%;
+}
+
+.Button {
+  font: inherit;
+  color: rgba(27, 20, 100, 0.75);
+  background-color: rgb(161, 199, 248);
+  border-radius: 10px;
+  margin: 10px;
+  width: 200px;
+  height: 30px;
+  border: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: 0.1s;
+}
+
+button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  transform: scale(1.1);
+}
+
+button:active {
+  transform: scale(1);
+}
+
+.SchoolInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border-bottom: solid; */
+  border-width: 1px;
+  width: 100%;
+}
+
+.SchoolName {
+  font-size: 150%;
+  margin-top: 3px;
+  margin-bottom: 7px;
+}
+
+.ContactInputsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: calc(100% - 10px);
+  font-size: 100%;
+  margin-bottom: 10px;
+  border-bottom: solid;
+  border-width: 1px;
+  padding-bottom: 10px;
+}
+
+.ContactInput {
+  display: flex;
+  width: 33%;
+  align-items: center;
+  justify-content: center;
+}
+
+.DataTrackerSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: solid;
+  border-width: 1px;
+  width: calc(100% - 10px);
+}
+
+.DataTracker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.DataTrackerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.CheckBox {
+  margin-right: 5px;
+  border: solid;
+}
+
+.DataTrackerType {
+  font-size: 100%;
+  width: 60px;
+  align-self: center;
+  margin: 5px;
+}
+
+.DataTextArea {
+  width: 90%;
+  height: 50px;
+  font: inherit;
+  font-size: 75%;
+  border-radius: 7px;
+  border: solid;
+  border-width: 1px;
+  padding: 10px;
+  border-color: rgba(27, 20, 100, 0.75);
+}
+
+.ContactNoteSection {
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: solid;
+  border-width: 1px;
+}
+
+.ContactNote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.ContactNoteType {
+  font-size: 100%;
+  margin-bottom: 5px;
+}
+
+.ContactNotes {
+  width: 90%;
+  height: 75px;
+  margin-bottom: 5px;
+  font: inherit;
+  font-size: 75%;
+  border-radius: 7px;
+  border: solid;
+  border-width: 1px;
+  padding: 10px;
+  border-color: rgba(27, 20, 100, 0.75);
+}
+
+.SchoolInfoInputs {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.SchoolInfoInput {
+  margin: 10px;
+  border-radius: 7px;
+  font: inherit;
+  font-size: 75%;
+  border: solid;
+  border-width: 1px;
+  padding: 10px;
+  border-color: rgba(27, 20, 100, 0.75);
+}
+
+.InfoRequest {
+  font: inherit;
+  font-size: 300%;
+}
