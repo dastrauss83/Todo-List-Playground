@@ -131,6 +131,7 @@ export const TodoList: React.FC = () => {
       </div>
     );
   }
+
   if (screenState === "new") {
     return (
       <div>
