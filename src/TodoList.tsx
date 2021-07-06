@@ -117,6 +117,20 @@ export const TodoList: React.FC = () => {
     }
   };
 
+  if (todoList.length === 0) {
+    return (
+      <div>
+        <NavBar
+          onClick={newTodoButton}
+          setActiveTodoList={setActiveTodoList}
+          todoList={todoList}
+        />
+        <div className="Header" id="StartingMessage">
+          Click New Todo to get started!
+        </div>
+      </div>
+    );
+  }
   if (screenState === "new") {
     return (
       <div>
@@ -125,19 +139,21 @@ export const TodoList: React.FC = () => {
           setActiveTodoList={setActiveTodoList}
           todoList={todoList}
         />
-        {todoList.slice(todoList.length - 1).map((i) => (
-          <Todo
-            onChange={handleChange}
-            todo={i}
-            screenState={screenState}
-            setScreenState={setScreenState}
-            activeTodos={todoList}
-            setActiveTodos={setTodoList}
-            onClick={handleExpandedTodo}
-            todoList={todoList}
-            setTodoList={setTodoList}
-          />
-        ))}
+        <div className="TodoList">
+          {todoList.slice(todoList.length - 1).map((i) => (
+            <Todo
+              onChange={handleChange}
+              todo={i}
+              screenState={screenState}
+              setScreenState={setScreenState}
+              activeTodos={todoList}
+              setActiveTodos={setTodoList}
+              onClick={handleExpandedTodo}
+              todoList={todoList}
+              setTodoList={setTodoList}
+            />
+          ))}
+        </div>
       </div>
     );
   }

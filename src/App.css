@@ -18,6 +18,12 @@
   color: whitesmoke;
 }
 
+#StartingMessage {
+  margin-top: 100px;
+  margin-bottom: 100vh;
+  font-style: italic;
+}
+
 .Todo {
   border: solid;
   width: calc(70vw);
@@ -38,6 +44,11 @@
   transform: scale(1.02);
   cursor: pointer;
 }
+
+.TodoList {
+  margin-bottom: 100vh;
+}
+
 .NavBar {
   display: flex;
   align-self: center;
