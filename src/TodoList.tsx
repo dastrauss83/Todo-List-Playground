@@ -183,7 +183,7 @@ export const TodoList: React.FC = () => {
         todoList={todoList}
       />
       <DragDropContext onDragEnd={handleOnDragEnd}>
-        <Droppable droppableId="TodoList">
+        <Droppable droppableId="TodoList" direction="horizontal">
           {(droppableProvided) => (
             <ul
               className="TodoList"

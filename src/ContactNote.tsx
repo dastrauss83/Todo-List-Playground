@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { todo } from "./Todo";
 
 export type ContactNoteType = "Emails" | "Phone Calls" | "General Notes";
@@ -15,16 +16,23 @@ export const ContactNote: React.FC<ContactNoteProps> = ({
   school,
   value,
 }) => {
+  const [internalValue, setInternalValue] = useState("");
+
+  useEffect(() => setInternalValue(value), [value]);
+
   return (
     <div className="ContactNote">
       <label className="ContactNoteType">{contactNoteType}</label>
-      <input
-        type="text"
+      <textarea
         className="ContactNotes"
         placeholder={contactNoteType}
-        onChange={(e) => onChange(contactNoteType, school.id, e.target.value)}
+        onChange={(e) => {
+          onChange(contactNoteType, school.id, e.target.value);
+          setInternalValue(e.target.value);
+        }}
         onClick={(e) => e.stopPropagation()}
-      />
+        value={internalValue}
+      ></textarea>
     </div>
   );
 };
