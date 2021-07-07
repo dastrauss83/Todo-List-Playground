@@ -101,11 +101,13 @@ export const TodoList: React.FC = () => {
     console.log(todoList);
     if (variant === "delete") {
       e.stopPropagation();
-      let index = todoList.findIndex((todo: todo) => todo.id === id);
-      const tempTodos = [...todoList];
-      tempTodos.splice(index, 1);
-      setScreenState("list");
-      setTodoList(tempTodos);
+      if (window.confirm("Are you sure you want to delete?")) {
+        let index = todoList.findIndex((todo: todo) => todo.id === id);
+        const tempTodos = [...todoList];
+        tempTodos.splice(index, 1);
+        setScreenState("list");
+        setTodoList(tempTodos);
+      }
     } else if (variant === "expand") {
       if (screenState === "list" || screenState === "new") {
         const tempActiveTodo = todoList.find((todo: todo) => todo.id === id);
@@ -200,7 +202,7 @@ export const TodoList: React.FC = () => {
         todoList={todoList}
       />
       <DragDropContext onDragEnd={handleOnDragEnd}>
-        <Droppable droppableId="TodoList" direction="horizontal">
+        <Droppable droppableId="TodoList" direction="vertical">
           {(droppableProvided) => (
             <ul
               className="TodoList"

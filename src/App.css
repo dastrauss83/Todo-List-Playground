@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+html {
+  background-color: rgba(27, 20, 100, 0.45);
+}
+
 .body {
   height: 100%;
   width: 100%;
@@ -7,7 +11,6 @@
   flex-direction: column;
   align-items: center;
   font-family: "Roboto", sans-serif;
-  background-color: rgba(27, 20, 100, 0.75);
 }
 
 .Header {
@@ -20,7 +23,6 @@
 
 #StartingMessage {
   margin-top: 100px;
-  margin-bottom: 100vh;
   font-style: italic;
 }
 
@@ -43,10 +45,6 @@
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   transform: scale(1.02);
   cursor: pointer;
-}
-
-.TodoList {
-  margin-bottom: 100vh;
 }
 
 .NavBar {
@@ -86,7 +84,6 @@ button:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border-bottom: solid; */
   border-width: 1px;
   width: 100%;
 }
