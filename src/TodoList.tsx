@@ -14,7 +14,7 @@ export const TodoList: React.FC = () => {
   const [activeTodoList, setActiveTodoList] = useState<Array<todo>>([]);
   const [screenState, setScreenState] = useState<string>("list");
   const [activeTodo, setActiveTodo] = useState<todo>({
-    id: 0,
+    id: -1,
 
     schoolName: "",
 
