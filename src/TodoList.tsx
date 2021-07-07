@@ -12,7 +12,7 @@ import {
 export const TodoList: React.FC = () => {
   const [todoList, setTodoList] = useState<Array<todo>>([]);
   const [activeTodoList, setActiveTodoList] = useState<Array<todo>>([]);
-  const [screenState, setScreenState] = useState<string>("new");
+  const [screenState, setScreenState] = useState<string>("list");
   const [activeTodo, setActiveTodo] = useState<todo>({
     id: 0,
 
@@ -35,7 +35,15 @@ export const TodoList: React.FC = () => {
   });
 
   useEffect(() => {
+    setTodoList(JSON.parse(localStorage.getItem("todoList") || "[]"));
+    if (JSON.parse(localStorage.getItem("todoList") || "[]").length === 0) {
+      setScreenState("new");
+    }
+  }, []);
+
+  useEffect(() => {
     setActiveTodoList(todoList);
+    localStorage.setItem("todoList", JSON.stringify(todoList));
   }, [todoList, setTodoList]);
 
   const newTodo = (): todo => {
@@ -62,7 +70,6 @@ export const TodoList: React.FC = () => {
   };
 
   const handleChange = (variant: string, id: number, value: string) => {
-    console.log(todoList);
     let index = todoList.findIndex((todo: todo) => todo.id === id);
     const tempTodos = [...todoList];
     if (
@@ -85,7 +92,6 @@ export const TodoList: React.FC = () => {
   };
 
   const newTodoButton = (variant: string): void => {
-    console.log(todoList);
     if (variant === "new") {
       const tempTodos = [...todoList];
       tempTodos.push(newTodo());
@@ -98,7 +104,6 @@ export const TodoList: React.FC = () => {
   };
 
   const handleExpandedTodo = (e: any, variant: string, id: number) => {
-    console.log(todoList);
     if (variant === "delete") {
       e.stopPropagation();
       if (window.confirm("Are you sure you want to delete?")) {
